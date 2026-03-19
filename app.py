@@ -109,3 +109,16 @@ st.markdown(f"""
 - 도보 10분 내 운동시설 확충  
 - 생활밀착형 공원 확대  
 """)
+st.subheader("📊 평균 외부활동율 vs 비만율")
+
+avg_activity = df["activity_rate"].mean()
+avg_obesity = df["obesity_rate"].mean()
+
+labels = ["외부활동율 (평균)", "비만율 (평균)"]
+values = [avg_activity, avg_obesity]
+
+fig4, ax4 = plt.subplots()
+ax4.bar(labels, values)
+
+ax4.set_ylabel("비율 (%)")
+st.pyplot(fig4)
